@@ -7,11 +7,11 @@ import Image from 'next/image';
 import foto1 from '../../../public/assets/foto4.jpeg';
 import foto2 from '../../../public/assets/foto1.jpeg';
 import foto3 from '../../../public/assets/foto3.jpeg';
-import foto4 from '../../../public/assets/foto2.jpeg'
 import NavBar from '../NavBar/NavBar'; 
 import AlbumGrid from '../Grid/AlbumGrid';
 import Footer from '../Footer/Footer';
 import Tabs from '../Tabs/Tabs';
+import Novedades from '../Novedades/Novedades';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -167,6 +167,8 @@ const LandingPage = () => {
                     </div>
                 </div>
             </div>
+
+            <Novedades />
 
             <Footer /> 
         </div>
