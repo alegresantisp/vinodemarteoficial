@@ -3,12 +3,12 @@ import { FaInstagram, FaYoutube, FaSpotify } from "react-icons/fa";
 import { SiLinktree } from "react-icons/si";
 
 const NavBar = () => {
-    const iconSize = 32; 
+    const iconSize = 36; 
 
     return (
         <div className="flex flex-col items-center space-y-11">
             <a
-                href="https://instagram.com"
+                href="https://https://www.instagram.com/vinodemarteok/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-gray-400"
@@ -16,7 +16,7 @@ const NavBar = () => {
                 <FaInstagram size={iconSize} />
             </a>
             <a
-                href="https://youtube.com"
+                href="https://www.youtube.com/@vinodemarte"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-gray-400"
@@ -24,7 +24,7 @@ const NavBar = () => {
                 <FaYoutube size={iconSize} />
             </a>
             <a
-                href="https://spotify.com"
+                href="https://open.spotify.com/artist/1BmVaxdtAKWTYw9ryVUajb"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-gray-400"
@@ -32,7 +32,7 @@ const NavBar = () => {
                 <FaSpotify size={iconSize} />
             </a>
             <a
-                href="https://linktree.com"
+                href="https://linktr.ee/vinodemarte"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-gray-400"

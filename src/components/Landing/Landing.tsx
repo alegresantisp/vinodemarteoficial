@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
@@ -7,9 +7,11 @@ import Image from 'next/image';
 import foto1 from '../../../public/assets/foto4.jpeg';
 import foto2 from '../../../public/assets/foto1.jpeg';
 import foto3 from '../../../public/assets/foto3.jpeg';
+import foto4 from '../../../public/assets/foto2.jpeg'
 import NavBar from '../NavBar/NavBar'; 
 import AlbumGrid from '../Grid/AlbumGrid';
 import Footer from '../Footer/Footer';
+import Tabs from '../Tabs/Tabs';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,12 +29,13 @@ const LandingPage = () => {
         const navBar = navBarRef.current;
         const text = textRef.current;
 
+        // Animación para la sección 1
         if (section1) {
             gsap.fromTo(
                 section1,
                 { opacity: 1 },
                 {
-                    opacity: 0.7,
+                    opacity: 0.1,
                     scrollTrigger: {
                         trigger: section1,
                         start: 'top top',
@@ -43,22 +46,43 @@ const LandingPage = () => {
             );
         }
 
+        // Animación para la sección 2
         if (section2) {
             gsap.fromTo(
                 section2,
-                { opacity: 0.7 },
+                { opacity: 1 },
                 {
-                    opacity: 1,
+                    opacity: 0.7,
                     scrollTrigger: {
                         trigger: section2,
-                        start: 'top bottom',
-                        end: 'bottom bottom',
+                        start: 'top top',
+                        end: 'bottom top',
                         scrub: true,
                     }
                 }
             );
         }
 
+        // Animación para la sección 3
+        if (section3) {
+            gsap.fromTo(
+                section3,
+                { opacity: 0, scale: 0.7 },
+                {
+                    opacity: 1.3,
+                    scale: 1,
+                    scrollTrigger: {
+                        trigger: section3,
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: true,
+                    }
+                }
+            );
+        }
+
+
+        // Animación para el NavBar
         if (navBar) {
             gsap.fromTo(
                 navBar,
@@ -75,6 +99,7 @@ const LandingPage = () => {
             );
         }
 
+        // Animación para el texto
         if (text) {
             gsap.fromTo(
                 text,
@@ -83,23 +108,6 @@ const LandingPage = () => {
                     opacity: 1,
                     scrollTrigger: {
                         trigger: section2,
-                        start: 'top center',
-                        end: 'bottom center',
-                        scrub: true,
-                    }
-                }
-            );
-        }
-
-        if (section3) {
-            gsap.fromTo(
-                section3,
-                { opacity: 0.9, x: 100 }, 
-                {
-                    opacity: 1, 
-                    x: 0, 
-                    scrollTrigger: {
-                        trigger: section3,
                         start: 'top center',
                         end: 'bottom center',
                         scrub: true,
@@ -119,7 +127,7 @@ const LandingPage = () => {
                     style={{ objectFit: 'cover' }}
                     className="filter brightness-75" 
                 />
-                <h1 className="title absolute inset-0 flex items-center justify-center text-white text-5xl md:text-7xl font-bold">
+                <h1 className="title poppins absolute inset-0 flex items-center justify-center text-white text-5xl md:text-7xl font-bold">
                     VINO DE MARTE
                 </h1>
             </div>
@@ -133,7 +141,10 @@ const LandingPage = () => {
                     className="filter brightness-75"
                 />
                 <div ref={navBarRef} className="absolute top-10 right-10 z-10">
-                    <NavBar /> 
+                    <NavBar />
+                </div>
+                <div className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10">
+                    <Tabs />
                 </div>
                 <div ref={textRef} className="absolute bottom-4 left-4 p-4 z-20">
                     <h2 className="text-2xl md:text-4xl font-semibold">
@@ -142,7 +153,7 @@ const LandingPage = () => {
                 </div>
             </div>
 
-            <div ref={section3Ref} className="relative w-full h-screen flex items-center justify-end bg-gray-800 overflow-hidden">
+            <div ref={section3Ref} className="relative w-full h-screen flex items-center justify-center overflow-hidden"> 
                 <Image
                     src={foto3}
                     alt="New Background"
@@ -163,4 +174,3 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
-
