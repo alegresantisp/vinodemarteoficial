@@ -8,7 +8,7 @@ const NavBar = () => {
     return (
         <div className="flex flex-col items-center space-y-11">
             <a
-                href="https://https://www.instagram.com/vinodemarteok/"
+                href="https://www.instagram.com/vinodemarteok/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-gray-400"
