@@ -57,7 +57,7 @@ const Novedades: React.FC = () => {
                         rel="noopener noreferrer"
                         className="inline-block mt-4 px-6 py-2 text-white bg-gradient-to-r from-gray-800 via-purple-700 to-gray-800 hover:from-gray-700 hover:via-purple-600 hover:to-gray-700 font-bold rounded"
                     >
-                        Comprá tu entrada
+                        Compr&aacute; tu entrada
                     </a>
                 </div>
 
@@ -73,7 +73,7 @@ const Novedades: React.FC = () => {
                         Vino de Marte es una banda apasionada por el rock, formada por Federico Hahner | baterista,
                         Bautista Pozzo | guitarrista y Santiago Alegre | voz y bajo. Han dejado su huella en escenarios
                         como Trastienda, Makena, City Bar y otros lugares emblemáticos. Con un EP, un show en vivo en 
-                        Trastienda y varios singles, anticipan el lanzamiento de su próximo disco, "Calle Sensación". 
+                        Trastienda y varios singles, anticipan el lanzamiento de su próximo disco, &quot;Calle Sensaci&oacute;n&quot;. 
                         La banda se destaca por componer sus propias canciones, utilizando el rock como medio para 
                         expresar sus pensamientos y emociones.
                     </p>
@@ -85,3 +85,4 @@ const Novedades: React.FC = () => {
 };
 
 export default Novedades;
+
