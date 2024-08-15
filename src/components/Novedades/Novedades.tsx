@@ -70,8 +70,8 @@ const Novedades: React.FC = () => {
                 <div ref={setSectionRef(2)} className="bg-white p-6 shadow-lg">
                     <h3 className="text-3xl font-bold mb-4">Historia de la Banda</h3>
                     <p className="text-gray-700">
-                        Vino de Marte es una banda apasionada por el rock, formada por Federico Hahner (baterista),
-                        Bautista Pozzo (guitarrista) y Santiago Alegre (voz y bajo). Han dejado su huella en escenarios
+                        Vino de Marte es una banda apasionada por el rock, formada por Federico Hahner | baterista,
+                        Bautista Pozzo | guitarrista y Santiago Alegre | voz y bajo. Han dejado su huella en escenarios
                         como Trastienda, Makena, City Bar y otros lugares emblemáticos. Con un EP, un show en vivo en 
                         Trastienda y varios singles, anticipan el lanzamiento de su próximo disco, "Calle Sensación". 
                         La banda se destaca por componer sus propias canciones, utilizando el rock como medio para 
