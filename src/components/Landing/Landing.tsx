@@ -1,14 +1,13 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useMediaQuery } from 'react-responsive';
 import Image from 'next/image';
-import foto1 from '../../../public/assets/foto4.jpeg';
+import foto1Large from '../../../public/assets/foto4.jpeg';
+import foto1Small from '../../../public/assets/foto5.jpeg';
 import foto2 from '../../../public/assets/foto1.jpeg';
 import foto3 from '../../../public/assets/foto3.jpeg';
-import foto5 from '../../../public/assets/foto5.jpeg';
 import NavBar from '../NavBar/NavBar'; 
 import AlbumGrid from '../Grid/AlbumGrid';
 import Footer from '../Footer/Footer';
@@ -24,7 +23,22 @@ const LandingPage = () => {
     const navBarRef = useRef<HTMLDivElement>(null);
     const textRef = useRef<HTMLDivElement>(null);
 
-    const isSmallScreen = useMediaQuery({ query: '(max-width: 600px)' });
+    const [currentImage, setCurrentImage] = useState(foto1Large);
+
+    useEffect(() => {
+        const updateImage = () => {
+            if (window.innerWidth < 600) {
+                setCurrentImage(foto1Small);
+            } else {
+                setCurrentImage(foto1Large);
+            }
+        };
+
+        updateImage(); // Run on mount
+        window.addEventListener('resize', updateImage); // Run on resize
+
+        return () => window.removeEventListener('resize', updateImage);
+    }, []);
 
     useEffect(() => {
         const section1 = section1Ref.current;
@@ -85,7 +99,6 @@ const LandingPage = () => {
             );
         }
 
-
         // Animación para el NavBar
         if (navBar) {
             gsap.fromTo(
@@ -125,7 +138,7 @@ const LandingPage = () => {
         <div className="w-full">
             <div ref={section1Ref} className="relative w-full h-screen flex items-center justify-center bg-black">
                 <Image
-                    src={isSmallScreen ? foto5 : foto1} 
+                    src={currentImage} 
                     alt="Background"
                     fill
                     style={{ objectFit: 'cover' }}
@@ -180,4 +193,3 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
-
