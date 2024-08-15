@@ -3,10 +3,12 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useMediaQuery } from 'react-responsive';
 import Image from 'next/image';
 import foto1 from '../../../public/assets/foto4.jpeg';
 import foto2 from '../../../public/assets/foto1.jpeg';
 import foto3 from '../../../public/assets/foto3.jpeg';
+import foto5 from '../../../public/assets/foto5.jpeg';
 import NavBar from '../NavBar/NavBar'; 
 import AlbumGrid from '../Grid/AlbumGrid';
 import Footer from '../Footer/Footer';
@@ -21,6 +23,8 @@ const LandingPage = () => {
     const section3Ref = useRef<HTMLDivElement>(null);
     const navBarRef = useRef<HTMLDivElement>(null);
     const textRef = useRef<HTMLDivElement>(null);
+
+    const isSmallScreen = useMediaQuery({ query: '(max-width: 768px)' });
 
     useEffect(() => {
         const section1 = section1Ref.current;
@@ -121,7 +125,7 @@ const LandingPage = () => {
         <div className="w-full">
             <div ref={section1Ref} className="relative w-full h-screen flex items-center justify-center bg-black">
                 <Image
-                    src={foto1}
+                    src={isSmallScreen ? foto5 : foto1} 
                     alt="Background"
                     fill
                     style={{ objectFit: 'cover' }}
@@ -176,3 +180,4 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
+
