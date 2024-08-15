@@ -18,7 +18,7 @@ const Novedades: React.FC = () => {
         sections.forEach((section) => {
             if (section) {
                 gsap.fromTo(section,
-                    { opacity: 0, y: 50 },
+                    { opacity: 0.5, y: 50 }, 
                     {
                         opacity: 1,
                         y: 0,
@@ -49,9 +49,16 @@ const Novedades: React.FC = () => {
                 <div ref={setSectionRef(0)} className="bg-white p-6 shadow-lg">
                     <h3 className="text-3xl font-bold mb-4">Próximas Fechas</h3>
                     <ul className="list-disc ml-5">
-                        <li>06 Sept - Niceto Bar </li>
-                       
+                        <li>06 Sept - Niceto Bar</li>
                     </ul>
+                    <a
+                        href="https://www.passline.com/eventos/vino-de-marte-en-niceto-bar"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block mt-4 px-6 py-2 text-white bg-gradient-to-r from-gray-800 via-purple-700 to-gray-800 hover:from-gray-700 hover:via-purple-600 hover:to-gray-700 font-bold rounded"
+                    >
+                        Comprá tu entrada
+                    </a>
                 </div>
 
                 <div ref={setSectionRef(1)} className="bg-white p-6 shadow-lg">
@@ -63,7 +70,12 @@ const Novedades: React.FC = () => {
                 <div ref={setSectionRef(2)} className="bg-white p-6 shadow-lg">
                     <h3 className="text-3xl font-bold mb-4">Historia de la Banda</h3>
                     <p className="text-gray-700">
-                        ¡Mantente al día con las últimas novedades! 
+                        Vino de Marte es una banda apasionada por el rock, formada por Federico Hahner (baterista),
+                        Bautista Pozzo (guitarrista) y Santiago Alegre (voz y bajo). Han dejado su huella en escenarios
+                        como Trastienda, Makena, City Bar y otros lugares emblemáticos. Con un EP, un show en vivo en 
+                        Trastienda y varios singles, anticipan el lanzamiento de su próximo disco, "Calle Sensación". 
+                        La banda se destaca por componer sus propias canciones, utilizando el rock como medio para 
+                        expresar sus pensamientos y emociones.
                     </p>
                 </div>
 
