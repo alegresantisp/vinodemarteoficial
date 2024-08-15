@@ -24,7 +24,7 @@ const LandingPage = () => {
     const navBarRef = useRef<HTMLDivElement>(null);
     const textRef = useRef<HTMLDivElement>(null);
 
-    const isSmallScreen = useMediaQuery({ query: '(max-width: 768px)' });
+    const isSmallScreen = useMediaQuery({ query: '(max-width: 600px)' });
 
     useEffect(() => {
         const section1 = section1Ref.current;
