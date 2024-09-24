@@ -40,30 +40,35 @@ const AlbumGrid: React.FC = () => {
         <FaArrowLeft size={20} />
       </button>
 
-      <div className="flex w-full justify-center overflow-x-hidden">
-        {songs.map((song, index) => (
-          <div
-            key={song.id}
-            className={`transition-transform duration-500 ease-in-out ${index === currentIndex ? 'opacity-100 scale-100' : 'opacity-50 scale-70'} mx-0.1`} 
-            style={{ transform: `translateX(${(index - currentIndex) * 100}%)` }}
-          >
-            <Image
-              src={song.imgSrc}
-              alt={`Imagen Disco ${index + 1}`}
-              width={200}
-              height={200}
-              className="object-cover rounded-lg"
-            />
-            <div className="flex justify-center mt-2">
-              <button
-                onClick={handlePlayPause}
-                className="bg-black bg-opacity-50 text-white p-3 rounded-full"
-              >
-                {isPlaying ? <FaPause size={20} /> : <FaPlay size={20} />}
-              </button>
+      <div className="flex w-full justify-center overflow-hidden">
+        <div
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        >
+          {songs.map((song, index) => (
+            <div
+              key={song.id}
+              className={`flex flex-col items-center transition-opacity duration-500 ease-in-out ${index === currentIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`}
+              style={{ minWidth: '100%' }} // Asegura que cada elemento ocupe el 100% del contenedor
+            >
+              <Image
+                src={song.imgSrc}
+                alt={`Imagen Disco ${index + 1}`}
+                width={200}
+                height={200}
+                className="object-cover rounded-lg"
+              />
+              <div className="flex justify-center mt-2">
+                <button
+                  onClick={handlePlayPause}
+                  className="bg-black bg-opacity-50 text-white p-3 rounded-full"
+                >
+                  {isPlaying ? <FaPause size={20} /> : <FaPlay size={20} />}
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       <button
@@ -79,3 +84,5 @@ const AlbumGrid: React.FC = () => {
 };
 
 export default AlbumGrid;
+
+
