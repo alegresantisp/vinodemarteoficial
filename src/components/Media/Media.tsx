@@ -21,7 +21,7 @@ export function Media() {
 
         {/* Video de YouTube */}
         <div className="mt-8 w-[80%] max-w-md mb-10 px-4">
-          <h2 className="text-xl sm:text-2xl font-bold mb-4 text-white">Mira este video:</h2>
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 text-white">Mirá el clip de GIRA:</h2>
           <div className="relative w-full h-0 pb-[56.25%] sm:pb-[42.1875%] md:pb-[56.25%]">
             <iframe
               className="absolute top-0 left-0 w-full h-full sm:w-2/4 sm:h-2/4 sm:left-1/2 sm:-translate-x-1/2 md:w-full md:h-full md:left-0 md:translate-x-0"
