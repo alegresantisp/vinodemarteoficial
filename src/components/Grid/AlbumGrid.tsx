@@ -1,3 +1,4 @@
+'use client';
 import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import { FaPlay, FaPause, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
@@ -10,7 +11,6 @@ const songs = [
 
 const AlbumGrid: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [hovered, setHovered] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -32,50 +32,50 @@ const AlbumGrid: React.FC = () => {
   };
 
   return (
-    <div
-      className="relative w-full h-full flex flex-col items-center justify-center overflow-hidden rounded-lg"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      <div className="relative w-full h-full flex items-center justify-center">
-        <Image
-          src={songs[currentIndex].imgSrc}
-          alt='Imagen Disco'
-          fill
-          style={{ objectFit: 'cover' }}
-          className="transition-transform duration-500 ease-in-out transform"
-        />
-        <div
-          className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${hovered ? 'opacity-100' : 'opacity-0'}`}
-        >
-          <button
-            onClick={handlePlayPause}
-            className="bg-black bg-opacity-50 text-white p-3 rounded-full"
+    <div className="relative w-full flex items-center justify-center overflow-hidden rounded-lg mt-10">
+      <button
+        onClick={handlePrev}
+        className="bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-black absolute left-10 z-10"
+      >
+        <FaArrowLeft size={20} />
+      </button>
+
+      <div className="flex w-full justify-center overflow-x-hidden">
+        {songs.map((song, index) => (
+          <div
+            key={song.id}
+            className={`transition-transform duration-500 ease-in-out ${index === currentIndex ? 'opacity-100 scale-100' : 'opacity-50 scale-70'} mx-0.1`} 
+            style={{ transform: `translateX(${(index - currentIndex) * 100}%)` }}
           >
-            {isPlaying ? <FaPause size={30} /> : <FaPlay size={30} />}
-          </button>
-        </div>
+            <Image
+              src={song.imgSrc}
+              alt={`Imagen Disco ${index + 1}`}
+              width={200}
+              height={200}
+              className="object-cover rounded-lg"
+            />
+            <div className="flex justify-center mt-2">
+              <button
+                onClick={handlePlayPause}
+                className="bg-black bg-opacity-50 text-white p-3 rounded-full"
+              >
+                {isPlaying ? <FaPause size={20} /> : <FaPlay size={20} />}
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
-      <div className="absolute bottom-2 flex space-x-4">
-        <button
-          onClick={handlePrev}
-          className="bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-black"
-        >
-          <FaArrowLeft size={20} />
-        </button>
-        <button
-          onClick={handleNext}
-          className="bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-black"
-        >
-          <FaArrowRight size={20} />
-        </button>
-      </div>
+
+      <button
+        onClick={handleNext}
+        className="bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-black absolute right-10 z-10"
+      >
+        <FaArrowRight size={20} />
+      </button>
+
       <audio ref={audioRef} src={songs[currentIndex].audioSrc} />
     </div>
   );
 };
 
 export default AlbumGrid;
-
-
-

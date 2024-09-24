@@ -35,24 +35,23 @@ const Novedades: React.FC = () => {
         });
     }, []);
 
-    // Callback ref function that correctly assigns the element to the array
     const setSectionRef = (index: number) => (element: HTMLDivElement | null) => {
         sectionRefs.current[index] = element;
     };
 
     return (
-        <div ref={novedadesRef} className="novedades-section w-full bg-gray-100 py-16 px-8">
-            <h2 className="text-5xl font-serif text-gray-900 text-center mb-12">NOVEDADES</h2>
+        <div ref={novedadesRef} className="novedades-section w-full bg-gradient-to-b from-gray-800 to-gray-900 py-16 px-8">
+            <h2 className="text-5xl font-serif text-white text-center mb-12">NOVEDADES</h2>
             
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
                 <div ref={setSectionRef(0)} className="bg-white p-6 shadow-lg">
                     <h3 className="text-3xl font-bold mb-4">Próximas Fechas</h3>
                     <ul className="list-disc ml-5">
-                        <li>06 Sept - Niceto Bar</li>
+                        <li>29 Nov - CCSI</li>
                     </ul>
                     <a
-                        href="https://www.passline.com/eventos/vino-de-marte-en-niceto-bar"
+                        href="https://www.passline.com/eventos/vino-de-marte-en-el-ccsi"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block mt-4 px-6 py-2 text-white bg-gradient-to-r from-gray-800 via-purple-700 to-gray-800 hover:from-gray-700 hover:via-purple-600 hover:to-gray-700 font-bold rounded"
@@ -85,4 +84,3 @@ const Novedades: React.FC = () => {
 };
 
 export default Novedades;
-
