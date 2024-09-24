@@ -63,7 +63,7 @@ const Novedades: React.FC = () => {
                 <div ref={setSectionRef(1)} className="bg-white p-6 shadow-lg">
                     <h3 className="text-3xl font-bold mb-4">Próximos Discos</h3>
                     <Image src={calleSensa} alt="Próximo Disco" width={300} height={300} className="mb-4" />
-                    <p className="text-gray-700">Nuestro próximo álbum estará disponible en breves. ¡No te lo pierdas!</p>
+                    <p className="text-gray-700">Nuestro próximo álbum estará disponible en Noviembre. ¡No te lo pierdas!</p>
                 </div>
 
                 <div ref={setSectionRef(2)} className="bg-white p-6 shadow-lg">
