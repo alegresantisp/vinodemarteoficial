@@ -57,7 +57,7 @@ const LandingPage = () => {
                 <div className="absolute top-10 right-10 z-10">
                     <NavBar />
                 </div>
-                <div className="absolute bottom-8 left-4 p-4 z-20">
+                <div className="absolute bottom-12 left-4 p-4 z-20">
                     <h2 className="text-2xl md:text-4xl font-semibold">
                         Que sea Rock
                     </h2>
