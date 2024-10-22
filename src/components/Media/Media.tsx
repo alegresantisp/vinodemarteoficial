@@ -20,7 +20,7 @@ export function Media() {
         <AlbumGrid />
 
         {/* Video de YouTube */}
-        <div className="mt-8 w-[80%] max-w-md mb-10 px-4">
+        <div className="mt-20 w-[80%] max-w-md mb-10 px-4">
           <h2 className="text-xl sm:text-2xl font-bold mb-4 text-white">Mirá el clip de GIRA:</h2>
           <div className="relative w-full h-0 pb-[56.25%] sm:pb-[42.1875%] md:pb-[56.25%]">
             <iframe

@@ -16,7 +16,8 @@ const LandingPage = () => {
     // Función para desplazarse a la sección Media
     const scrollToMedia = () => {
         if (mediaRef.current) {
-            mediaRef.current.scrollIntoView({ behavior: 'smooth' });
+            const mediaPosition = mediaRef.current.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({ top: mediaPosition, behavior: 'smooth' });
         }
     };
 
@@ -40,7 +41,7 @@ const LandingPage = () => {
                 </h1>
 
                 {/* Flecha hacia abajo */}
-                <div className="absolute bottom-10 cursor-pointer" onClick={scrollToMedia}>
+                <div className="absolute bottom-12 cursor-pointer" onClick={scrollToMedia}>
                     <FaChevronDown className="w-8 h-8 text-white hover:text-gray-300 transition" />
                 </div>
             </div>
